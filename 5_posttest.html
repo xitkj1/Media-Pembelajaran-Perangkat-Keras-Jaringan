@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tahap 5: Rangkuman & Posttest | Pengenalan Perangkat Keras Jaringan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+  </head>
+  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased">
+
+    <!-- HEADER & IDENTITAS MODUL -->
+    <header class="bg-white border-b border-[#E2E8F0] sticky top-0 z-30 shadow-xs">
+      <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
+              <span class="text-xs text-slate-500">Problem-Based Learning (PBL)</span>
+            </div>
+            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Pengenalan Perangkat Keras Jaringan Komputer</h1>
+          </div>
+        </div>
+        <div class="text-right hidden sm:block">
+          <span class="text-xs text-slate-500 font-medium block">Tingkat Kesulitan:</span>
+          <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">Dasar / Pemula Awam</span>
+        </div>
+      </div>
+
+      <!-- STEPPER NAVIGATION BAR (1 -> 2 -> 3 -> 4 -> 5) -->
+      <nav class="bg-slate-100/80 border-t border-slate-200 px-4 py-3">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-5 gap-2 sm:gap-4 text-xs font-medium">
+            
+            <!-- Tahap 1: Selesai -->
+            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 1">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
+              <span class="truncate text-[11px] sm:text-xs">1. Orientasi</span>
+            </a>
+
+            <!-- Tahap 2: Selesai -->
+            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 2">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
+              <span class="truncate text-[11px] sm:text-xs">2. Gejala</span>
+            </a>
+
+            <!-- Tahap 3: Selesai -->
+            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 3">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
+              <span class="truncate text-[11px] sm:text-xs">3. Modul Alat</span>
+            </a>
+
+            <!-- Tahap 4: Selesai -->
+            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 4">
+              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
+              <span class="truncate text-[11px] sm:text-xs">4. Simulasi</span>
+            </a>
+
+            <!-- Tahap 5: Aktif -->
+            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 5: Posttest">
+              <span class="w-6 h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-xs shrink-0">5</span>
+              <span class="truncate font-semibold text-[11px] sm:text-xs">5. Posttest</span>
+            </a>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT: TAHAP 5 PBL -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 flex-1 w-full">
+
+      <!-- Badge Tahapan PBL -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+        Tahap 5 PBL: Menganalisis & Mengevaluasi Proses Pemecahan Masalah
+      </div>
+
+      <!-- Hero Header -->
+      <div class="text-center sm:text-left mb-8">
+        <div class="inline-block text-4xl mb-3">🎓</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+          Hebat! Kamu Sudah Memahami Dasar Perangkat Keras Jaringan
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed">
+          Kamu telah berhasil membimbing Budi dan teman-temannya dari awal mula masalah, mendiagnosis gejala, mempelajari perangkat keras, hingga mensimulasikan solusinya. Berikut rangkuman intisari untuk modal masa depanmu di jurusan TKJ!
+        </p>
+      </div>
+
+      <!-- 3 POIN RANGKUMAN SINGKAT SESUAI KETENTUAN -->
+      <div class="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 mb-8">
+        <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold">📌</span>
+          3 Poin Rangkuman Emas untuk Siswa TKJ
+        </h3>
+
+        <div class="space-y-4">
+          
+          <!-- POIN 1 -->
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+            <div class="flex items-start gap-3">
+              <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 mt-0.5">1</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  Bedakan Hub & Switch: "Toa vs Polisi Lalu Lintas Pintar"
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <strong>Hub</strong> adalah Toa yang gaduh dan menyembur data ke semua colokan hingga menyebabkan tabrakan data (collision). Sedangkan <strong>Switch</strong> adalah Polisi Pintar yang membaca alamat tujuan (MAC Address) dan mengalirkan data langsung ke komputer penerima tanpa mengganggu orang lain.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- POIN 2 -->
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+            <div class="flex items-start gap-3">
+              <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 mt-0.5">2</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  Router Adalah "Pak Pos / Petunjuk Jalan ke Internet"
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Jika Switch mengatur lalu lintas di dalam satu ruangan lab, maka <strong>Router</strong> bertugas membawa surat/paket data keluar dari gedung sekolah melintasi jaringan internet dunia. Router menghubungkan jaringan-jaringan yang berbeda nomor IP.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- POIN 3 -->
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition">
+            <div class="flex items-start gap-3">
+              <span class="w-7 h-7 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-xs shrink-0 mt-0.5">3</span>
+              <div>
+                <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                  Pondasi Fisik: "Jalan Raya, Pemancar, dan Pintu Gerbang"
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Data berjalan melalui <strong>Kabel UTP & RJ-45</strong> (jalan tol kabel) atau lewat <strong>Access Point</strong> (gelombang udara Wi-Fi), dan masuk ke komputer melalui <strong>NIC (Network Interface Card)</strong> yang menjadi pintu gerbang fisik setiap komputer.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MINI KUIS UJI PERCAYA DIRI SEBELUM POSTTEST -->
+      <div class="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">⚡ Cek Kesiapan Diri (Mini Quiz)</h3>
+            <p class="text-xs text-slate-500">Coba jawab 1 pertanyaan kilat ini sebelum membuka Google Form:</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 font-bold">Uji Refleks</span>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="text-xs sm:text-sm font-semibold text-slate-800 mb-3">
+            &ldquo;Perangkat apa yang paling tepat dianalogikan sebagai Toa Pengeras Suara karena menyemburkan data ke semua komputer tanpa memilih jalur?&rdquo;
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <button onclick="jawabKuis(false)" class="p-2.5 bg-white border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:border-blue-500 hover:bg-blue-50 transition cursor-pointer">
+              A. Router
+            </button>
+            <button onclick="jawabKuis(true)" class="p-2.5 bg-white border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:border-emerald-500 hover:bg-emerald-50 transition cursor-pointer">
+              B. Hub
+            </button>
+            <button onclick="jawabKuis(false)" class="p-2.5 bg-white border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:border-blue-500 hover:bg-blue-50 transition cursor-pointer">
+              C. Switch
+            </button>
+          </div>
+
+          <div id="hasilKuis" class="mt-3 text-xs hidden"></div>
+        </div>
+      </div>
+
+      <!-- GERBANG POSTTEST (CALL TO ACTION UTAMA) -->
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 sm:p-10 text-white shadow-xl text-center relative overflow-hidden">
+        <div class="max-w-xl mx-auto relative z-10">
+          <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-xs rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+            Langkah Terakhir Pembelajaran
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-3">
+            Siap Menguji Pemahamanmu?
+          </h3>
+          <p class="text-blue-100 text-xs sm:text-sm mb-8 leading-relaxed">
+            Klik tombol besar di bawah ini untuk mengerjakan lembar evaluasi akhir (Posttest) melalui Google Form yang telah disiapkan Guru. Kerjakan dengan jujur dan santai!
+          </p>
+
+          <!-- TOMBOL UTAMA CTA KE GOOGLE FORM -->
+          <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-blue-700 hover:bg-blue-50 text-base font-extrabold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
+            <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-1.5V7.5A4.5 4.5 0 0 0 13.5 3h-6A4.5 4.5 0 0 0 3 7.5v9A4.5 4.5 0 0 0 7.5 21h12zm-12-16.5h6A3 3 0 0 1 16.5 7.5V10.5H7.5A3 3 0 0 1 4.5 7.5v0A3 3 0 0 1 7.5 4.5zm0 15A3 3 0 0 1 4.5 16.5V12h12v4.5a3 3 0 0 1-3 3h-6z"/>
+            </svg>
+            <span>Mulai Posttest (Google Form)</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+          <p class="text-[11px] text-blue-200 mt-3">Link akan terbuka di tab baru peramban Anda.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER NAVIGASI (KEMBALI KE SIMULASI & MULAI ULANG) -->
+    <footer class="bg-white border-t border-[#E2E8F0] py-4 sticky bottom-0 z-20 shadow-lg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        
+        <!-- Tombol Kembali ke Simulasi Sesuai Ketentuan -->
+        <a href="4_simulasi.html" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl border border-slate-300 transition duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          <span>Kembali ke Simulasi</span>
+        </a>
+
+        <!-- Tombol Mengulang Pembelajaran dari Awal -->
+        <a href="1_orientasi.html" class="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm font-semibold rounded-xl border border-blue-200 transition duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+          <span>Mulai Ulang dari Awal</span>
+        </a>
+
+      </div>
+    </footer>
+
+    <script>
+      function jawabKuis(benar) {
+        const hasil = document.getElementById('hasilKuis');
+        hasil.classList.remove('hidden');
+        if (benar) {
+          hasil.className = "mt-3 p-3 bg-emerald-100 text-emerald-900 font-bold rounded-lg border border-emerald-300";
+          hasil.innerHTML = "🎉 Tepat sekali! Hub adalah 'Toa Pengeras Suara' yang suka menyemburkan data ke semua orang!";
+        } else {
+          hasil.className = "mt-3 p-3 bg-red-100 text-red-900 font-bold rounded-lg border border-red-300";
+          hasil.innerHTML = "❌ Masih kurang tepat. Ingat: alat yang berteriak ke semua orang seperti toa adalah HUB!";
+        }
+      }
+    </script>
+  </body>
+</html>

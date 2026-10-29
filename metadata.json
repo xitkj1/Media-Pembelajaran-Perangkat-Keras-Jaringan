@@ -1,0 +1,6 @@
+{
+  "name": "Modul Jaringan Komputer SMK TKJ - PBL Perangkat Keras",
+  "description": "Media pembelajaran interaktif pengenalan perangkat keras jaringan komputer berbasis Problem-Based Learning (PBL) untuk siswa Kelas 10 SMK TKJ yang masih awam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

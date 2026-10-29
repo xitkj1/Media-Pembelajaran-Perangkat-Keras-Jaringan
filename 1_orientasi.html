@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tahap 1: Orientasi Masalah | Pengenalan Perangkat Keras Jaringan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+      @keyframes blink {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.25; transform: scale(1.15); }
+      }
+      .animate-lampu-merah {
+        animation: blink 0.8s infinite ease-in-out;
+      }
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-4px); }
+        75% { transform: translateX(4px); }
+      }
+      .animate-goyang {
+        animation: shake 0.4s infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased">
+
+    <!-- HEADER & IDENTITAS MODUL -->
+    <header class="bg-white border-b border-[#E2E8F0] sticky top-0 z-30 shadow-xs">
+      <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
+              <span class="text-xs text-slate-500">Problem-Based Learning (PBL)</span>
+            </div>
+            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Pengenalan Perangkat Keras Jaringan Komputer</h1>
+          </div>
+        </div>
+        <div class="text-right hidden sm:block">
+          <span class="text-xs text-slate-500 font-medium block">Tingkat Kesulitan:</span>
+          <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">Dasar / Pemula Awam</span>
+        </div>
+      </div>
+
+      <!-- STEPPER NAVIGATION BAR (1 -> 2 -> 3 -> 4 -> 5) -->
+      <nav class="bg-slate-100/80 border-t border-slate-200 px-4 py-3">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-5 gap-2 sm:gap-4 text-xs font-medium">
+            
+            <!-- Tahap 1: Aktif -->
+            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 1: Orientasi Masalah">
+              <span class="w-6 h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-xs shrink-0">1</span>
+              <span class="truncate font-semibold text-[11px] sm:text-xs">1. Orientasi</span>
+            </a>
+
+            <!-- Tahap 2 -->
+            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 2: Cek Gejala">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">2</span>
+              <span class="truncate text-[11px] sm:text-xs">2. Gejala</span>
+            </a>
+
+            <!-- Tahap 3 -->
+            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 3: Modul Alat">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">3</span>
+              <span class="truncate text-[11px] sm:text-xs">3. Modul Alat</span>
+            </a>
+
+            <!-- Tahap 4 -->
+            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 4: Simulasi">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">4</span>
+              <span class="truncate text-[11px] sm:text-xs">4. Simulasi</span>
+            </a>
+
+            <!-- Tahap 5 -->
+            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 5: Posttest">
+              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">5</span>
+              <span class="truncate text-[11px] sm:text-xs">5. Posttest</span>
+            </a>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT: TAHAP 1 PBL -->
+    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 flex-1 w-full">
+
+      <!-- Badge Tahapan PBL -->
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold mb-4">
+        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+        Tahap 1 PBL: Mengorientasikan Siswa pada Masalah
+      </div>
+
+      <!-- Judul Halaman -->
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+        Studi Kasus: Cerita di Lab Komputer Sekolah
+      </h2>
+      <p class="text-slate-600 text-base mb-6 leading-relaxed">
+        Selamat datang di dunia Jaringan Komputer! Jangan takut ya, materi ini dirancang sangat ramah bagi kamu yang baru pertama kali belajar. Mari kita bantu Budi menyelesaikan masalah misterius di lab sekolahnya!
+      </p>
+
+      <!-- KARTU NARASI UTAMA -->
+      <div class="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 mb-6">
+        
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl shrink-0 font-bold">
+            👨‍🎓
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Hari Senin Pagi di Lab Komputer 1</h3>
+            <p class="text-sm text-slate-500">Pukul 09.30 WIB - Tenggat Pengumpulan Tugas Mengetik Cepat</p>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <p>
+            Suasana di lab komputer SMK sedang heboh! Guru Produktif TKJ, <strong>Pak Joko</strong>, baru saja memberi pengumuman:
+          </p>
+
+          <div class="bg-slate-50 border-l-4 border-blue-500 p-4 rounded-r-xl italic text-slate-800 font-medium">
+            &ldquo;Anak-anak, waktu mengetik sudah habis. Tolong kirimkan file tugas kalian sekarang juga lewat kabel jaringan lab langsung ke komputer Guru di meja depan!&rdquo;
+          </div>
+
+          <p>
+            Mendengar instruksi itu, <strong>Budi</strong> bersama <strong>30 siswa lainnya</strong> serentak menekan tombol <em>"Kirim File"</em> di detik yang sama.
+          </p>
+
+          <p>
+            Akan tetapi, apa yang terjadi selanjutnya justru membuat seisi kelas panik! Layar komputer Budi berputar lambat (loading berputar-putar), lalu muncul pesan galat <em>&ldquo;Gagal Mengirim: Jalur Terputus!&rdquo;</em>. Ternyata hal serupa dialami oleh seluruh teman-temannya. Pengiriman file macet total!
+          </p>
+        </div>
+
+        <!-- VISUALISASI KOTAK PERINGATAN KONDISI LAB -->
+        <div class="mt-6 bg-red-50 border-2 border-red-300 rounded-2xl p-5 sm:p-6 relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+            
+            <!-- Lampu Indikator Merah Berkedip -->
+            <div class="flex flex-col items-center justify-center p-4 bg-white rounded-xl border border-red-200 shadow-sm shrink-0">
+              <div class="w-8 h-8 rounded-full bg-red-600 shadow-lg shadow-red-500/50 animate-lampu-merah flex items-center justify-center">
+                <span class="w-2.5 h-2.5 rounded-full bg-white/80"></span>
+              </div>
+              <span class="text-[11px] font-bold text-red-700 mt-2 uppercase tracking-wide">Status LED</span>
+              <span class="text-[10px] text-red-500 font-medium">Collision Alert</span>
+            </div>
+
+            <div class="flex-1 text-center sm:text-left">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-red-200/80 text-red-800 text-xs font-bold mb-1">
+                ⚠️ PERINGATAN SISTEM LAB
+              </div>
+              <h4 class="text-base sm:text-lg font-bold text-red-900">
+                Lampu Indikator Berkedip Merah - Data Tabrakan!
+              </h4>
+              <p class="text-xs sm:text-sm text-red-700 mt-1 leading-relaxed">
+                Di sudut meja server lab, ada kotak hitam besi tua berlabel <strong>"HUB 10/100 Mbps"</strong>. Semua lampu kecilnya menyala merah berkedip kencang tanpa henti. Data kiriman Budi dan teman-temannya saling bertabrakan di dalam kabel!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIMULASI MINI INTERAKTIF TABRAKAN DATA -->
+        <div class="mt-6 border border-slate-200 rounded-2xl p-5 bg-slate-50">
+          <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2 mb-2">
+            <span>🎮</span> Coba Sendiri Kejadiannya:
+          </h4>
+          <p class="text-xs text-slate-600 mb-4">
+            Klik tombol di bawah ini untuk melihat apa yang terjadi saat Budi, Siti, dan Edo menekan tombol kirim secara serentak ke dalam <strong>Hub Tua</strong>!
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 text-center">
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <div class="text-2xl mb-1">💻</div>
+              <div class="text-xs font-bold text-slate-800">Komputer Budi</div>
+              <div id="statusBudi" class="text-[11px] text-slate-500 font-medium">Siap kirim file...</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <div class="text-2xl mb-1">💻</div>
+              <div class="text-xs font-bold text-slate-800">Komputer Siti</div>
+              <div id="statusSiti" class="text-[11px] text-slate-500 font-medium">Siap kirim file...</div>
+            </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <div class="text-2xl mb-1">💻</div>
+              <div class="text-xs font-bold text-slate-800">Komputer Edo</div>
+              <div id="statusEdo" class="text-[11px] text-slate-500 font-medium">Siap kirim file...</div>
+            </div>
+          </div>
+
+          <!-- Jalur ke Hub Tua -->
+          <div id="simulasiArea" class="bg-white border border-slate-300 rounded-xl p-4 text-center transition-all duration-300">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 rounded-lg text-xs font-mono font-semibold text-slate-700 mb-2">
+              <span>📟 PERANGKAT LAB SAAT INI:</span> <span class="text-red-600 font-bold">HUB TUA (Model Lawas)</span>
+            </div>
+            <div id="visualCollision" class="py-3 text-slate-500 text-xs sm:text-sm">
+              Tekan tombol kirim serentak di bawah untuk menguji jaringan lab.
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button id="btnKirimSerentak" onclick="jalankanSimulasiMasalah()" class="w-full sm:w-auto px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition duration-200 cursor-pointer flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Kirim File Tugas Bersama-sama Sekarang!
+            </button>
+            <button id="btnReset" onclick="resetSimulasiMasalah()" class="w-full sm:w-auto px-4 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs sm:text-sm font-medium rounded-xl transition duration-200 cursor-pointer hidden">
+              Ulangi Simulasi
+            </button>
+          </div>
+        </div>
+
+        <!-- PERTANYAAN PEMANTIK PBL -->
+        <div class="mt-6 p-4 rounded-xl bg-blue-50/60 border border-blue-200">
+          <h4 class="text-sm font-bold text-blue-950 flex items-center gap-2 mb-2">
+            <span>🤔</span> Pertanyaan Misteri untuk Kamu Calon Ahli TKJ:
+          </h4>
+          <ul class="list-disc list-inside space-y-1.5 text-xs sm:text-sm text-blue-900 leading-relaxed">
+            <li>Kabelnya tersambung rapi, komputernya menyala, tapi kenapa saat ngirim barengan malah macet total?</li>
+            <li>Mengapa alat bernama <strong>"HUB"</strong> itu membuat pengiriman data saling tabrakan seperti mobil di jalan sempit?</li>
+            <li>Adakah alat lain yang lebih pintar untuk menggantikan Hub tersebut?</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER NAVIGASI (HANYA TOMBOL LANJUT KE TAHAP 2) -->
+    <footer class="bg-white border-t border-[#E2E8F0] py-4 sticky bottom-0 z-20 shadow-lg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+        
+        <div class="text-xs text-slate-500 font-medium">
+          Langkah 1 dari 5 &bull; <span class="text-blue-600 font-semibold">Orientasi Masalah</span>
+        </div>
+
+        <!-- Tombol Lanjut Sesuai Ketentuan -->
+        <a href="2_gejala.html" class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-xs transition duration-200">
+          <span>Lanjut ke Cek Gejala</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+
+      </div>
+    </footer>
+
+    <script>
+      function jalankanSimulasiMasalah() {
+        const visual = document.getElementById('visualCollision');
+        const area = document.getElementById('simulasiArea');
+        const statusBudi = document.getElementById('statusBudi');
+        const statusSiti = document.getElementById('statusSiti');
+        const statusEdo = document.getElementById('statusEdo');
+        const btnKirim = document.getElementById('btnKirimSerentak');
+        const btnReset = document.getElementById('btnReset');
+
+        statusBudi.innerHTML = '<span class="text-amber-600">Mengirim file_budi.docx...</span>';
+        statusSiti.innerHTML = '<span class="text-amber-600">Mengirim file_siti.docx...</span>';
+        statusEdo.innerHTML = '<span class="text-amber-600">Mengirim file_edo.docx...</span>';
+
+        visual.innerHTML = `
+          <div class="flex items-center justify-center gap-2 text-amber-600 font-semibold">
+            <span class="animate-spin text-lg">⏳</span> Data sedang meluncur serentak ke Hub...
+          </div>
+        `;
+
+        setTimeout(() => {
+          area.classList.add('border-red-500', 'bg-red-50', 'animate-goyang');
+          visual.innerHTML = `
+            <div class="py-2">
+              <div class="text-3xl mb-1">💥💥💥</div>
+              <div class="text-red-700 font-extrabold text-sm sm:text-base uppercase tracking-wider">
+                TABRAKAN DATA (DATA COLLISION)!
+              </div>
+              <p class="text-xs text-red-600 mt-1 max-w-md mx-auto">
+                Karena Hub tidak punya otak pemisah jalur, 3 file beradu di satu kabel yang sama! Paket data rusak dan hancur lebur di tengah jalan.
+              </p>
+            </div>
+          `;
+          statusBudi.innerHTML = '<span class="text-red-600 font-bold">❌ Gagal / Macet</span>';
+          statusSiti.innerHTML = '<span class="text-red-600 font-bold">❌ Gagal / Macet</span>';
+          statusEdo.innerHTML = '<span class="text-red-600 font-bold">❌ Gagal / Macet</span>';
+
+          btnKirim.classList.add('hidden');
+          btnReset.classList.remove('hidden');
+        }, 1000);
+      }
+
+      function resetSimulasiMasalah() {
+        const visual = document.getElementById('visualCollision');
+        const area = document.getElementById('simulasiArea');
+        const statusBudi = document.getElementById('statusBudi');
+        const statusSiti = document.getElementById('statusSiti');
+        const statusEdo = document.getElementById('statusEdo');
+        const btnKirim = document.getElementById('btnKirimSerentak');
+        const btnReset = document.getElementById('btnReset');
+
+        area.classList.remove('border-red-500', 'bg-red-50', 'animate-goyang');
+        visual.innerHTML = 'Tekan tombol kirim serentak di bawah untuk menguji jaringan lab.';
+        statusBudi.innerHTML = '<span class="text-slate-500">Siap kirim file...</span>';
+        statusSiti.innerHTML = '<span class="text-slate-500">Siap kirim file...</span>';
+        statusEdo.innerHTML = '<span class="text-slate-500">Siap kirim file...</span>';
+
+        btnKirim.classList.remove('hidden');
+        btnReset.classList.add('hidden');
+      }
+    </script>
+  </body>
+</html>
