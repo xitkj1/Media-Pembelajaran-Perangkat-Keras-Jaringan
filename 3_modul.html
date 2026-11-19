@@ -21,66 +21,83 @@
         100% { opacity: 0.8; transform: scale(0.9); }
       }
       .anim-wave { animation: waveExpand 2s infinite ease-in-out; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
   </head>
-  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased">
+  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased overflow-x-hidden">
 
     <!-- HEADER & IDENTITAS MODUL -->
-    <header class="bg-white border-b border-[#E2E8F0] sticky top-0 z-30 shadow-xs">
-      <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <header class="bg-white border-b border-[#E2E8F0] sm:sticky sm:top-0 z-30 shadow-xs">
+      <div class="max-w-5xl mx-auto px-3.5 py-3 sm:px-6 sm:py-4 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold shadow-sm shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
             </svg>
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
-              <span class="text-xs text-slate-500">Problem-Based Learning (PBL)</span>
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-0.5">
+              <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
+              <span class="text-[10px] sm:text-xs text-slate-500">Problem-Based Learning</span>
             </div>
-            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Pengenalan Perangkat Keras Jaringan Komputer</h1>
+            <h1 class="text-sm sm:text-lg font-bold text-slate-900 leading-snug">Pengenalan Perangkat Keras Jaringan Komputer</h1>
           </div>
         </div>
-        <div class="text-right hidden sm:block">
+        <div class="text-right hidden sm:block shrink-0">
           <span class="text-xs text-slate-500 font-medium block">Tingkat Kesulitan:</span>
           <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">Dasar / Pemula Awam</span>
         </div>
       </div>
 
       <!-- STEPPER NAVIGATION BAR (1 -> 2 -> 3 -> 4 -> 5) -->
-      <nav class="bg-slate-100/80 border-t border-slate-200 px-4 py-3">
+      <nav class="bg-slate-100/90 border-t border-slate-200 px-2.5 py-2 sm:px-4 sm:py-3 sticky top-0 z-30">
         <div class="max-w-5xl mx-auto">
-          <div class="grid grid-cols-5 gap-2 sm:gap-4 text-xs font-medium">
+          <div class="grid grid-cols-5 gap-1 sm:gap-3 text-xs font-medium">
             
             <!-- Tahap 1: Selesai -->
-            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 1">
-              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
-              <span class="truncate text-[11px] sm:text-xs">1. Orientasi</span>
+            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 1">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">✓</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Orientasi</span>
+                <span class="hidden sm:inline">1. Orientasi</span>
+              </span>
             </a>
 
             <!-- Tahap 2: Selesai -->
-            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 2">
-              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
-              <span class="truncate text-[11px] sm:text-xs">2. Gejala</span>
+            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 2">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">✓</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Gejala</span>
+                <span class="hidden sm:inline">2. Gejala</span>
+              </span>
             </a>
 
             <!-- Tahap 3: Aktif -->
-            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 3: Modul Alat">
-              <span class="w-6 h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-xs shrink-0">3</span>
-              <span class="truncate font-semibold text-[11px] sm:text-xs">3. Modul Alat</span>
+            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 3: Modul Alat">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">3</span>
+              <span class="font-semibold text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Alat</span>
+                <span class="hidden sm:inline">3. Modul Alat</span>
+              </span>
             </a>
 
             <!-- Tahap 4 -->
-            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 4: Simulasi">
-              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">4</span>
-              <span class="truncate text-[11px] sm:text-xs">4. Simulasi</span>
+            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 4: Simulasi">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">4</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Simulasi</span>
+                <span class="hidden sm:inline">4. Simulasi</span>
+              </span>
             </a>
 
             <!-- Tahap 5 -->
-            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 5: Posttest">
-              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">5</span>
-              <span class="truncate text-[11px] sm:text-xs">5. Posttest</span>
+            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 5: Posttest">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">5</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Posttest</span>
+                <span class="hidden sm:inline">5. Posttest</span>
+              </span>
             </a>
 
           </div>
@@ -89,56 +106,56 @@
     </header>
 
     <!-- MAIN CONTENT: TAHAP 3 PBL -->
-    <main class="max-w-5xl mx-auto px-4 py-8 sm:px-6 flex-1 w-full">
+    <main class="max-w-5xl mx-auto px-3.5 py-5 sm:px-6 sm:py-8 flex-1 w-full">
 
       <!-- Badge Tahapan PBL -->
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold mb-3">
-        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-        Tahap 3 PBL: Penyelidikan Mandiri & Pembimbingan Materi Alat Jaringan
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[11px] sm:text-xs font-semibold mb-3">
+        <span class="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
+        <span>Tahap 3 PBL: Penyelidikan Materi Alat Jaringan</span>
       </div>
 
       <!-- Judul Halaman -->
-      <div class="mb-6">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+      <div class="mb-4 sm:mb-6">
+        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
           Kenali Alat-Alat Jaringan Komputer
         </h2>
         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-          Amati <strong>gambar fisik perangkat</strong>, pahami bagian-bagiannya, dan pelajari <strong>analogi dunia nyatanya</strong>. Gunakan tombol <strong>Prev</strong> dan <strong>Next</strong> di bawah kartu untuk berpindah ke alat lainnya!
+          Amati <strong>gambar fisik perangkat</strong>, pahami bagian-bagiannya, dan pelajari <strong>analogi dunia nyatanya</strong>. Geser kartu atau gunakan tombol <strong>Prev</strong> dan <strong>Next</strong> untuk berpindah alat!
         </p>
       </div>
 
       <!-- TAB SELEKTOR CEPAT 6 ALAT -->
-      <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 mb-6 scrollbar-none text-xs font-semibold">
-        <button onclick="pilihAlat(0)" id="tabAlat-0" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-blue-600 text-white shadow-xs">
+      <div id="tabBarAlat" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2.5 mb-4 sm:mb-6 no-scrollbar snap-x text-xs font-semibold">
+        <button onclick="pilihAlat(0)" id="tabAlat-0" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-blue-600 text-white shadow-xs">
           <span>📮</span> 1. Router
         </button>
-        <button onclick="pilihAlat(1)" id="tabAlat-1" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        <button onclick="pilihAlat(1)" id="tabAlat-1" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
           <span>👮‍♂️</span> 2. Switch
         </button>
-        <button onclick="pilihAlat(2)" id="tabAlat-2" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        <button onclick="pilihAlat(2)" id="tabAlat-2" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
           <span>📢</span> 3. Hub
         </button>
-        <button onclick="pilihAlat(3)" id="tabAlat-3" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        <button onclick="pilihAlat(3)" id="tabAlat-3" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
           <span>🛣️</span> 4. Kabel UTP & RJ-45
         </button>
-        <button onclick="pilihAlat(4)" id="tabAlat-4" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        <button onclick="pilihAlat(4)" id="tabAlat-4" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
           <span>📡</span> 5. Access Point
         </button>
-        <button onclick="pilihAlat(5)" id="tabAlat-5" class="tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
+        <button onclick="pilihAlat(5)" id="tabAlat-5" class="tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50">
           <span>🚪</span> 6. NIC
         </button>
       </div>
 
       <!-- KARTU UTAMA MODUL SHOWCASE PERANGKAT -->
-      <section class="bg-white rounded-3xl border border-[#E2E8F0] shadow-sm overflow-hidden mb-8">
+      <section id="kartuShowcase" class="bg-white rounded-2xl sm:rounded-3xl border border-[#E2E8F0] shadow-sm overflow-hidden mb-6 sm:mb-8">
         
         <!-- Header Kartu: Posisi Alat & Navigasi Cepat -->
-        <div class="px-6 py-4 bg-slate-50/80 border-b border-slate-200 flex items-center justify-between flex-wrap gap-2">
-          <div class="flex items-center gap-2">
-            <span id="badgeIndikator" class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">
+        <div class="px-4 py-3 sm:px-6 sm:py-4 bg-slate-50/80 border-b border-slate-200 flex items-center justify-between flex-wrap gap-2">
+          <div class="flex items-center gap-2 min-w-0">
+            <span id="badgeIndikator" class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-[11px] sm:text-xs font-bold shrink-0">
               Alat 1 dari 6
             </span>
-            <span id="headerKategori" class="text-xs text-slate-500 font-medium hidden sm:inline">
+            <span id="headerKategori" class="text-xs text-slate-500 font-medium hidden sm:inline truncate">
               Gerbang Penghubung Antar Jaringan
             </span>
           </div>
@@ -155,17 +172,17 @@
         </div>
 
         <!-- BODY SHOWCASE: SPLIT LAYOUT (KIRI: GAMBAR PERANGKAT, KANAN: PENJELASAN) -->
-        <div class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-center">
           
           <!-- KOLOM KIRI (LG: 5 COLUMNS): GAMBAR & ILUSTRASI FISIK PERANGKAT -->
           <div class="lg:col-span-5 flex flex-col items-center">
             
-            <div id="wadahGambar" class="w-full bg-slate-900 rounded-2xl p-5 sm:p-6 border border-slate-700 shadow-inner flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden transition-all duration-300">
+            <div id="wadahGambar" class="w-full bg-slate-900 rounded-2xl p-3.5 sm:p-6 border border-slate-700 shadow-inner flex flex-col items-center justify-center min-h-[210px] sm:min-h-[290px] relative overflow-hidden transition-all duration-300">
               <!-- SVG GAMBAR PERANGKAT AKAN DI-INJECT SECARA DINAMIS DI SINI -->
             </div>
 
             <!-- Petunjuk Visual -->
-            <div class="mt-3 text-center">
+            <div class="mt-2.5 sm:mt-3 text-center">
               <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full border border-slate-200 inline-flex items-center gap-1.5">
                 <span>🔍</span> Ilustrasi visual skema fisik perangkat
               </span>
@@ -244,28 +261,30 @@
         </div>
 
         <!-- KONTROL NAVIGASI PREV & NEXT ALAT -->
-        <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+        <div class="px-4 py-3.5 sm:px-6 sm:py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-2 sm:gap-3">
           
           <!-- Tombol Prev -->
-          <button id="btnPrevAlat" onclick="alatSebelumnya()" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button id="btnPrevAlat" onclick="alatSebelumnya()" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2.5 rounded-xl bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 active:scale-[0.98] text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer shrink-0">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            <span>Alat Sebelumnya (Prev)</span>
+            <span class="sm:hidden">Prev</span>
+            <span class="hidden sm:inline">Alat Sebelumnya (Prev)</span>
           </button>
 
           <!-- Status Tengah -->
-          <div class="text-center">
-            <span id="counterAlatText" class="text-xs font-extrabold text-slate-700">
-              1 / 6 Perangkat
+          <div class="text-center min-w-0">
+            <span id="counterAlatText" class="text-xs font-extrabold text-slate-700 block">
+              1 / 6
             </span>
-            <span class="block text-[10px] text-slate-400">Tekan Panah &larr; / &rarr; Keyboard</span>
+            <span class="hidden sm:block text-[10px] text-slate-400">Tekan Panah &larr; / &rarr; Keyboard</span>
           </div>
 
           <!-- Tombol Next -->
-          <button id="btnNextAlat" onclick="alatBerikutnya()" class="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer">
-            <span>Alat Selanjutnya (Next)</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button id="btnNextAlat" onclick="alatBerikutnya()" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer shrink-0">
+            <span class="sm:hidden">Next</span>
+            <span class="hidden sm:inline">Alat Selanjutnya (Next)</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           </button>
@@ -275,23 +294,82 @@
       </section>
 
       <!-- WIDGET BEDA HUB VS SWITCH (KUNCI MATERI LAB BUDI) -->
-      <section class="bg-white rounded-3xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 mb-8">
+      <section class="bg-white rounded-2xl sm:rounded-3xl border border-[#E2E8F0] shadow-sm p-4 sm:p-8 mb-6 sm:mb-8">
         
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 sm:mb-6">
           <div>
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-1">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[11px] sm:text-xs font-bold mb-1">
               ⚖️ MATERI KUNCI SMK TKJ
             </div>
-            <h3 class="text-xl font-extrabold text-slate-900">Perbandingan Visual: Hub vs Switch</h3>
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900">Perbandingan Visual: Hub vs Switch</h3>
             <p class="text-xs sm:text-sm text-slate-500">Inilah inti pembeda dari masalah kemacetan lab Budi!</p>
           </div>
-          <button onclick="pilihAlat(1)" class="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-xl border border-emerald-300 transition cursor-pointer shrink-0">
+          <button onclick="pilihAlat(1); window.scrollTo({top: 0, behavior: 'smooth'});" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-xl border border-emerald-300 transition cursor-pointer shrink-0 w-full sm:w-auto">
             <span>👮‍♂️ Lihat Switch di Gambar Atas</span>
           </button>
         </div>
 
-        <!-- TABEL KOMPARASI VISUAL SEDERHANA -->
-        <div class="overflow-x-auto">
+        <!-- TAMPILAN MOBILE (< MD): KARTU KOMPARASI TANPA SCROLL SAMPING -->
+        <div class="grid grid-cols-1 gap-3 md:hidden">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-3.5">
+            <div class="text-xs font-extrabold text-slate-800 mb-2">1. Analogi Dunia Nyata</div>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-red-50 border border-red-200 rounded-xl p-2.5 text-red-800">
+                <div class="font-bold mb-0.5">📢 HUB</div>
+                <strong>Toa / Pengeras Suara</strong> (Semua mendengar)
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-emerald-800">
+                <div class="font-bold mb-0.5">👮‍♂️ SWITCH</div>
+                <strong>Polisi Lalu Lintas</strong> (Langsung ke tujuan)
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-3.5">
+            <div class="text-xs font-extrabold text-slate-800 mb-2">2. Cara Pengiriman Data</div>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-red-50 border border-red-200 rounded-xl p-2.5 text-slate-700">
+                <div class="font-bold text-red-700 mb-0.5">📢 HUB</div>
+                Disembur ke <strong>semua colokan</strong> (Broadcast)
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-slate-700">
+                <div class="font-bold text-emerald-700 mb-0.5">👮‍♂️ SWITCH</div>
+                Hanya ke <strong>komputer tujuan</strong> (Unicast)
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-3.5">
+            <div class="text-xs font-extrabold text-slate-800 mb-2">3. Resiko Tabrakan Data</div>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-red-50 border border-red-200 rounded-xl p-2.5 text-red-700 font-bold">
+                <div class="mb-0.5">📢 HUB</div>
+                Sangat Tinggi jika dikirim barengan
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-emerald-700 font-bold">
+                <div class="mb-0.5">👮‍♂️ SWITCH</div>
+                Nol / Tidak Ada Tabrakan (Aman)
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-slate-50/70 p-3.5">
+            <div class="text-xs font-extrabold text-slate-800 mb-2">4. Kecerdasan & Status</div>
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <div class="bg-red-50 border border-red-200 rounded-xl p-2.5 text-slate-600">
+                <div class="font-bold text-red-700 mb-0.5">📢 HUB</div>
+                Pasif, tidak kenal MAC, sudah usang
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 text-slate-800 font-medium">
+                <div class="font-bold text-emerald-700 mb-0.5">👮‍♂️ SWITCH</div>
+                Pintar (catatan MAC), standar lab modern
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABEL KOMPARASI VISUAL DESKTOP (MD+) -->
+        <div class="hidden md:block overflow-x-auto">
           <table class="w-full text-left text-xs sm:text-sm border-collapse">
             <thead>
               <tr class="border-b border-slate-200 bg-slate-50">
@@ -335,12 +413,12 @@
     </main>
 
     <!-- FOOTER NAVIGASI (KEMBALI KE 2 & LANJUT KE 4) -->
-    <footer class="bg-white border-t border-[#E2E8F0] py-4 sticky bottom-0 z-20 shadow-lg">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+    <footer class="bg-white border-t border-[#E2E8F0] py-3 sm:py-4 sticky bottom-0 z-20 shadow-lg">
+      <div class="max-w-5xl mx-auto px-3.5 sm:px-6 flex items-center justify-between gap-2.5 sm:gap-4">
         
         <!-- Tombol Kembali -->
-        <a href="2_gejala.html" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl border border-slate-300 transition duration-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="2_gejala.html" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold rounded-xl border border-slate-300 transition duration-200 shrink-0">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
           </svg>
           <span>Kembali</span>
@@ -351,9 +429,10 @@
         </div>
 
         <!-- Tombol Lanjut -->
-        <a href="4_simulasi.html" class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-xs transition duration-200">
-          <span>Lanjut ke Mini Lab Simulasi</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="4_simulasi.html" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition duration-200">
+          <span class="sm:hidden">Lanjut ke Simulasi</span>
+          <span class="hidden sm:inline">Lanjut ke Mini Lab Simulasi</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
@@ -721,15 +800,16 @@
         document.getElementById('teksTips').textContent = item.tips;
 
         // Counter navigasi
-        document.getElementById('counterAlatText').textContent = `${indeksSekarang + 1} / ${daftarAlat.length} Perangkat`;
+        document.getElementById('counterAlatText').innerHTML = `<span class="sm:hidden">${indeksSekarang + 1} / ${daftarAlat.length}</span><span class="hidden sm:inline">${indeksSekarang + 1} / ${daftarAlat.length} Perangkat</span>`;
 
-        // Update tampilan Tab Aktif
+        // Update tampilan Tab Aktif & scroll otomatis di HP
         daftarAlat.forEach((_, idx) => {
           const tab = document.getElementById(`tabAlat-${idx}`);
           if (idx === indeksSekarang) {
-            tab.className = "tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-blue-600 text-white shadow-xs font-bold";
+            tab.className = "tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-blue-600 text-white shadow-xs font-bold";
+            tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           } else {
-            tab.className = "tab-btn px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-medium";
+            tab.className = "tab-btn snap-start px-3 py-2 rounded-xl transition duration-150 flex items-center gap-1.5 shrink-0 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-medium";
           }
         });
 
@@ -743,29 +823,33 @@
           }
         });
 
-        // Update status tombol Prev & Next (bisa melingkar atau disable)
+        // Update status tombol Prev & Next
         const btnPrev = document.getElementById('btnPrevAlat');
         const btnNext = document.getElementById('btnNextAlat');
 
         if (indeksSekarang === 0) {
-          btnPrev.classList.add('opacity-50');
+          btnPrev.classList.add('opacity-40', 'cursor-not-allowed');
+          btnPrev.disabled = true;
         } else {
-          btnPrev.classList.remove('opacity-50');
+          btnPrev.classList.remove('opacity-40', 'cursor-not-allowed');
+          btnPrev.disabled = false;
         }
 
         if (indeksSekarang === daftarAlat.length - 1) {
           btnNext.innerHTML = `
-            <span>Selesai & Ke Simulasi &rarr;</span>
+            <span class="sm:hidden">Ke Simulasi &rarr;</span>
+            <span class="hidden sm:inline">Selesai & Ke Simulasi &rarr;</span>
           `;
-          btnNext.className = "inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer";
+          btnNext.className = "inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-[0.98] text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer shrink-0";
         } else {
           btnNext.innerHTML = `
-            <span>Alat Selanjutnya (Next)</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span class="sm:hidden">Next</span>
+            <span class="hidden sm:inline">Alat Selanjutnya (Next)</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
           `;
-          btnNext.className = "inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer";
+          btnNext.className = "inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white text-xs sm:text-sm font-bold shadow-xs transition duration-200 cursor-pointer shrink-0";
         }
       }
 
@@ -777,7 +861,6 @@
         if (indeksSekarang < daftarAlat.length - 1) {
           renderAlat(indeksSekarang + 1);
         } else {
-          // Jika sudah di alat terakhir, tombol next mengantar ke Tahap 4 Simulasi
           window.location.href = "4_simulasi.html";
         }
       }
@@ -796,6 +879,25 @@
           alatSebelumnya();
         }
       });
+
+      // Touch swipe navigation untuk pengguna HP
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const kartuShowcase = document.getElementById('kartuShowcase');
+      kartuShowcase.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      kartuShowcase.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const deltaX = touchEndX - touchStartX;
+        if (Math.abs(deltaX) > 60) {
+          if (deltaX < 0 && indeksSekarang < daftarAlat.length - 1) {
+            alatBerikutnya();
+          } else if (deltaX > 0 && indeksSekarang > 0) {
+            alatSebelumnya();
+          }
+        }
+      }, { passive: true });
 
       // Render awal pertama kali
       renderAlat(0);

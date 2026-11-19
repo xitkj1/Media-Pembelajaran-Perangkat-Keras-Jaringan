@@ -12,64 +12,79 @@
       body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
   </head>
-  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased">
+  <body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen flex flex-col antialiased overflow-x-hidden">
 
     <!-- HEADER & IDENTITAS MODUL -->
-    <header class="bg-white border-b border-[#E2E8F0] sticky top-0 z-30 shadow-xs">
-      <div class="max-w-5xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <header class="bg-white border-b border-[#E2E8F0] sm:sticky sm:top-0 z-30 shadow-xs">
+      <div class="max-w-5xl mx-auto px-3.5 py-3 sm:px-6 sm:py-4 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center font-bold shadow-sm shrink-0">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
             </svg>
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
-              <span class="text-xs text-slate-500">Problem-Based Learning (PBL)</span>
+          <div class="min-w-0">
+            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-0.5">
+              <span class="text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700">SMK TKJ Kelas 10</span>
+              <span class="text-[10px] sm:text-xs text-slate-500">Problem-Based Learning</span>
             </div>
-            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Pengenalan Perangkat Keras Jaringan Komputer</h1>
+            <h1 class="text-sm sm:text-lg font-bold text-slate-900 leading-snug">Pengenalan Perangkat Keras Jaringan Komputer</h1>
           </div>
         </div>
-        <div class="text-right hidden sm:block">
+        <div class="text-right hidden sm:block shrink-0">
           <span class="text-xs text-slate-500 font-medium block">Tingkat Kesulitan:</span>
           <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">Dasar / Pemula Awam</span>
         </div>
       </div>
 
       <!-- STEPPER NAVIGATION BAR (1 -> 2 -> 3 -> 4 -> 5) -->
-      <nav class="bg-slate-100/80 border-t border-slate-200 px-4 py-3">
+      <nav class="bg-slate-100/90 border-t border-slate-200 px-2.5 py-2 sm:px-4 sm:py-3 sticky top-0 z-30">
         <div class="max-w-5xl mx-auto">
-          <div class="grid grid-cols-5 gap-2 sm:gap-4 text-xs font-medium">
+          <div class="grid grid-cols-5 gap-1 sm:gap-3 text-xs font-medium">
             
             <!-- Tahap 1: Selesai -->
-            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 1">
-              <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-xs shrink-0">✓</span>
-              <span class="truncate text-[11px] sm:text-xs">1. Orientasi</span>
+            <a href="1_orientasi.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 transition" title="Kembali ke Tahap 1">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">✓</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Orientasi</span>
+                <span class="hidden sm:inline">1. Orientasi</span>
+              </span>
             </a>
 
             <!-- Tahap 2: Aktif -->
-            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 2: Cek Gejala">
-              <span class="w-6 h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-xs shrink-0">2</span>
-              <span class="truncate font-semibold text-[11px] sm:text-xs">2. Gejala</span>
+            <a href="2_gejala.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg bg-blue-600 text-white shadow-xs transition" title="Tahap 2: Cek Gejala">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white text-blue-600 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">2</span>
+              <span class="font-semibold text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Gejala</span>
+                <span class="hidden sm:inline">2. Gejala</span>
+              </span>
             </a>
 
             <!-- Tahap 3 -->
-            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 3: Modul Alat">
-              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">3</span>
-              <span class="truncate text-[11px] sm:text-xs">3. Modul Alat</span>
+            <a href="3_modul.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 3: Modul Alat">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">3</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Alat</span>
+                <span class="hidden sm:inline">3. Modul Alat</span>
+              </span>
             </a>
 
             <!-- Tahap 4 -->
-            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 4: Simulasi">
-              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">4</span>
-              <span class="truncate text-[11px] sm:text-xs">4. Simulasi</span>
+            <a href="4_simulasi.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 4: Simulasi">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">4</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Simulasi</span>
+                <span class="hidden sm:inline">4. Simulasi</span>
+              </span>
             </a>
 
             <!-- Tahap 5 -->
-            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 5: Posttest">
-              <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs shrink-0">5</span>
-              <span class="truncate text-[11px] sm:text-xs">5. Posttest</span>
+            <a href="5_posttest.html" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-lg text-slate-600 hover:bg-slate-200/80 transition" title="Tahap 5: Posttest">
+              <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-[11px] sm:text-xs shrink-0">5</span>
+              <span class="text-[10px] sm:text-xs leading-none text-center">
+                <span class="sm:hidden">Posttest</span>
+                <span class="hidden sm:inline">5. Posttest</span>
+              </span>
             </a>
 
           </div>
@@ -78,49 +93,49 @@
     </header>
 
     <!-- MAIN CONTENT: TAHAP 2 PBL -->
-    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 flex-1 w-full">
+    <main class="max-w-4xl mx-auto px-3.5 py-5 sm:px-6 sm:py-8 flex-1 w-full">
 
       <!-- Badge Tahapan PBL -->
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold mb-4">
-        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-        Tahap 2 PBL: Mengorganisasikan Siswa untuk Belajar & Mendiagnosis Gejala
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[11px] sm:text-xs font-semibold mb-3 sm:mb-4">
+        <span class="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
+        <span>Tahap 2 PBL: Mendiagnosis Gejala Masalah</span>
       </div>
 
       <!-- Judul Halaman -->
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+      <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
         Bantu Budi Menganalisis Masalah
       </h2>
-      <p class="text-slate-600 text-base mb-6 leading-relaxed">
+      <p class="text-slate-600 text-sm sm:text-base mb-5 sm:mb-6 leading-relaxed">
         Seorang teknisi jaringan handal selalu mencari tahu akar permasalahan dengan mencermati gejala-gejalanya. Yuk centang <strong>3 gejala utama</strong> yang terjadi di Lab Komputer Budi!
       </p>
 
       <!-- KARTU STATUS ANALISIS -->
-      <div class="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-6 sm:p-8 mb-6">
+      <div class="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm p-4 sm:p-8 mb-6">
         
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 sm:pb-6 border-b border-slate-100">
           <div>
-            <h3 class="text-lg font-bold text-slate-900">Daftar Pemeriksaan Gejala (Checklist)</h3>
-            <p class="text-xs sm:text-sm text-slate-500">Klik pada kotak centang berikut untuk mengonfirmasi temuan investigasi kamu.</p>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Daftar Pemeriksaan Gejala (Checklist)</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Tap pada kartu atau kotak centang berikut untuk mengonfirmasi temuan kamu.</p>
           </div>
 
-          <div class="inline-flex items-center gap-2 bg-slate-100 px-3.5 py-1.5 rounded-full border border-slate-200">
-            <span class="text-xs text-slate-600 font-medium">Status Analisis:</span>
+          <div class="inline-flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200 shrink-0">
+            <span class="text-xs text-slate-600 font-medium">Status:</span>
             <span id="badgeCounter" class="text-xs font-extrabold text-blue-600 bg-white px-2 py-0.5 rounded-full shadow-xs">0 / 3 Terpilih</span>
           </div>
         </div>
 
         <!-- 3 CHECKLIST INTERAKTIF -->
-        <div class="space-y-4 my-6">
+        <div class="space-y-3 sm:space-y-4 my-5 sm:my-6">
 
           <!-- GEJALA 1 -->
-          <label id="cardGejala1" class="flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer">
-            <input type="checkbox" id="gejala1" onchange="periksaGejala()" class="w-6 h-6 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
-            <div class="flex-1">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">Gejala #1</span>
+          <label id="cardGejala1" class="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer active:scale-[0.99]">
+            <input type="checkbox" id="gejala1" onchange="periksaGejala()" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 shrink-0">Gejala #1</span>
                 <h4 class="text-sm sm:text-base font-bold text-slate-900">Semua Komputer Mengirim File Bersamaan</h4>
               </div>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                 30 siswa menekan tombol <em>"Kirim"</em> pada detik yang sama ke satu komputer tujuan (komputer Pak Joko). Tidak ada antrean pengiriman.
               </p>
               <div class="mt-2 text-[11px] text-blue-700 bg-blue-50 p-2 rounded-lg font-medium inline-block">
@@ -130,14 +145,14 @@
           </label>
 
           <!-- GEJALA 2 -->
-          <label id="cardGejala2" class="flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer">
-            <input type="checkbox" id="gejala2" onchange="periksaGejala()" class="w-6 h-6 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
-            <div class="flex-1">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">Gejala #2</span>
+          <label id="cardGejala2" class="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer active:scale-[0.99]">
+            <input type="checkbox" id="gejala2" onchange="periksaGejala()" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 shrink-0">Gejala #2</span>
                 <h4 class="text-sm sm:text-base font-bold text-slate-900">Lab Masih Menggunakan Hub Tua (Tidak Bisa Membagi Jalur)</h4>
               </div>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                 Perangkat penghubung utama di lab adalah <strong>Hub</strong> lama. Hub ini bersifat pasif dan &ldquo;bodoh&rdquo;—ia hanya menyalin data dan menyemburkannya ke semua colokan tanpa tahu siapa penerima sebenarnya.
               </p>
               <div class="mt-2 text-[11px] text-blue-700 bg-blue-50 p-2 rounded-lg font-medium inline-block">
@@ -147,14 +162,14 @@
           </label>
 
           <!-- GEJALA 3 -->
-          <label id="cardGejala3" class="flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer">
-            <input type="checkbox" id="gejala3" onchange="periksaGejala()" class="w-6 h-6 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
-            <div class="flex-1">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">Gejala #3</span>
+          <label id="cardGejala3" class="flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer active:scale-[0.99]">
+            <input type="checkbox" id="gejala3" onchange="periksaGejala()" class="w-5 h-5 sm:w-6 sm:h-6 shrink-0 text-blue-600 rounded-lg border-slate-300 focus:ring-blue-500 mt-0.5 cursor-pointer">
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 shrink-0">Gejala #3</span>
                 <h4 class="text-sm sm:text-base font-bold text-slate-900">Terjadi Tabrakan Data (Data Collision)</h4>
               </div>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
                 Karena tidak ada pemisah jalur, gelombang sinyal data listrik di dalam kabel saling bertubrukan (collision), menyebabkan data rusak dan lampu indikator menyala merah berkedip kencang.
               </p>
               <div class="mt-2 text-[11px] text-blue-700 bg-blue-50 p-2 rounded-lg font-medium inline-block">
@@ -166,13 +181,13 @@
         </div>
 
         <!-- FEEDBACK BANNER JIKA SUDAH CENTANG SEMUA -->
-        <div id="feedbackSukses" class="hidden bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-5 text-emerald-950 transition-all duration-300">
+        <div id="feedbackSukses" class="hidden bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-4 sm:p-5 text-emerald-950 transition-all duration-300">
           <div class="flex items-start gap-3">
-            <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-xl shrink-0">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-bold text-lg sm:text-xl shrink-0">
               🎉
             </div>
             <div>
-              <h4 class="text-base font-bold text-emerald-900">Analisis Berhasil Sempurna!</h4>
+              <h4 class="text-sm sm:text-base font-bold text-emerald-900">Analisis Berhasil Sempurna!</h4>
               <p class="text-xs sm:text-sm text-emerald-800 mt-1 leading-relaxed">
                 Hebat sekali! Kamu berhasil memetakan 3 akar masalah di lab sekolah Budi. Masalahnya bukan komputernya yang rusak, melainkan <strong>alat pembagi jaringannya (Hub tua)</strong> yang butuh diganti dengan alat pintar. Tombol navigasi di bawah sekarang sudah aktif!
               </p>
@@ -181,8 +196,8 @@
         </div>
 
         <!-- HINT JIKA BELUM CENTANG SEMUA -->
-        <div id="feedbackBelum" class="bg-slate-100 border border-slate-200 rounded-xl p-4 text-xs text-slate-600 flex items-center gap-2">
-          <span>ℹ️</span>
+        <div id="feedbackBelum" class="bg-slate-100 border border-slate-200 rounded-xl p-3.5 sm:p-4 text-xs text-slate-600 flex items-center gap-2">
+          <span class="shrink-0">ℹ️</span>
           <span>Centang <strong>ketiga poin gejala</strong> di atas untuk membuka kunci tombol ke tahap berikutnya.</span>
         </div>
 
@@ -191,12 +206,12 @@
     </main>
 
     <!-- FOOTER NAVIGASI (KEMBALI KE 1 & LANJUT KE 3) -->
-    <footer class="bg-white border-t border-[#E2E8F0] py-4 sticky bottom-0 z-20 shadow-lg">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+    <footer class="bg-white border-t border-[#E2E8F0] py-3 sm:py-4 sticky bottom-0 z-20 shadow-lg">
+      <div class="max-w-4xl mx-auto px-3.5 sm:px-6 flex items-center justify-between gap-2.5 sm:gap-4">
         
         <!-- Tombol Kembali -->
-        <a href="1_orientasi.html" class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl border border-slate-300 transition duration-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="1_orientasi.html" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold rounded-xl border border-slate-300 transition duration-200 shrink-0">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
           </svg>
           <span>Kembali</span>
@@ -207,9 +222,10 @@
         </div>
 
         <!-- Tombol Lanjut (Kondisional: JS mengatur tampilan aktif/hijau) -->
-        <a id="btnLanjut" href="3_modul.html" class="inline-flex items-center gap-2 px-6 py-2.5 bg-slate-300 text-slate-500 cursor-not-allowed text-sm font-semibold rounded-xl shadow-xs transition duration-300 pointer-events-none">
-          <span>Lanjut ke Modul Penyelidikan</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a id="btnLanjut" href="3_modul.html" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 bg-slate-300 text-slate-500 cursor-not-allowed text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition duration-300 pointer-events-none">
+          <span class="sm:hidden">Lanjut ke Modul Alat</span>
+          <span class="hidden sm:inline">Lanjut ke Modul Penyelidikan</span>
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
@@ -228,9 +244,12 @@
         const card3 = document.getElementById('cardGejala3');
 
         // Style card jika dicentang
-        card1.className = c1 ? 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-emerald-500 bg-emerald-50/40 transition duration-200 cursor-pointer' : 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer';
-        card2.className = c2 ? 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-emerald-500 bg-emerald-50/40 transition duration-200 cursor-pointer' : 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer';
-        card3.className = c3 ? 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-emerald-500 bg-emerald-50/40 transition duration-200 cursor-pointer' : 'flex items-start gap-4 p-4 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer';
+        const baseOff = 'flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl border-2 border-slate-200 hover:border-blue-300 bg-white hover:bg-blue-50/30 transition duration-200 cursor-pointer active:scale-[0.99]';
+        const baseOn = 'flex items-start gap-3 sm:gap-4 p-3.5 sm:p-5 rounded-2xl border-2 border-emerald-500 bg-emerald-50/40 transition duration-200 cursor-pointer active:scale-[0.99]';
+
+        card1.className = c1 ? baseOn : baseOff;
+        card2.className = c2 ? baseOn : baseOff;
+        card3.className = c3 ? baseOn : baseOff;
 
         const total = (c1 ? 1 : 0) + (c2 ? 1 : 0) + (c3 ? 1 : 0);
         const badge = document.getElementById('badgeCounter');
@@ -242,14 +261,14 @@
 
         if (total === 3) {
           // Semua dicentang! Tombol berubah warna hijau aktif & bisa diklik
-          btn.className = "inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer text-sm font-semibold rounded-xl shadow-md shadow-emerald-200 ring-4 ring-emerald-100 transition duration-300";
+          btn.className = "flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white cursor-pointer text-xs sm:text-sm font-semibold rounded-xl shadow-md shadow-emerald-200 ring-4 ring-emerald-100 transition duration-300";
           btn.style.pointerEvents = "auto";
           badge.className = "text-xs font-extrabold text-white bg-emerald-600 px-2 py-0.5 rounded-full shadow-xs";
           feedbackSukses.classList.remove('hidden');
           feedbackBelum.classList.add('hidden');
         } else {
           // Masih ada yang belum dicentang
-          btn.className = "inline-flex items-center gap-2 px-6 py-2.5 bg-slate-300 text-slate-500 cursor-not-allowed text-sm font-semibold rounded-xl shadow-xs transition duration-300 pointer-events-none";
+          btn.className = "flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2.5 bg-slate-300 text-slate-500 cursor-not-allowed text-xs sm:text-sm font-semibold rounded-xl shadow-xs transition duration-300 pointer-events-none";
           btn.style.pointerEvents = "none";
           badge.className = "text-xs font-extrabold text-blue-600 bg-white px-2 py-0.5 rounded-full shadow-xs";
           feedbackSukses.classList.add('hidden');
